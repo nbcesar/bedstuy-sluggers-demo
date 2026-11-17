@@ -36,6 +36,7 @@
     }
     .rotate-y-180 { transform: rotateY(180deg); }
     .flipped { transform: rotateY(180deg); }
+
     @keyframes pulse-dot {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(1.25); }
@@ -44,6 +45,7 @@
   </style>
 </head>
 <body class="bg-white text-[#0C2340] antialiased m-0 p-0 pb-20 md:pb-0">
+
   <!-- =========================================================
        STICKY HEADER (CRISP WHITE, ORIGINAL SLUGGERS LOGO & NAVY/RED)
        ========================================================= -->
@@ -61,3 +63,1185 @@
           <div class="text-[11px] font-medium text-[#324A6D]">Central Brooklyn • Est. 2014</div>
         </div>
       </button>
+
+      <!-- Desktop Navigation Pills -->
+      <nav class="hidden md:flex items-center gap-1 bg-[#F3F5F8] p-1.5 rounded-xl border border-slate-200/80 text-xs font-semibold">
+        <button onclick="switchPage('home')" data-nav="home" class="nav-btn px-4 py-2 rounded-lg bg-[#0C2340] text-white shadow-sm transition cursor-pointer">
+          Welcome &amp; Join
+        </button>
+        <button onclick="switchPage('dugout')" data-nav="dugout" class="nav-btn px-4 py-2 rounded-lg text-[#324A6D] hover:text-[#0C2340] transition cursor-pointer flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 live-dot"></span>
+          Game Day &amp; Scores
+        </button>
+        <button onclick="switchPage('coaches')" data-nav="coaches" class="nav-btn px-4 py-2 rounded-lg text-[#324A6D] hover:text-[#0C2340] transition cursor-pointer">
+          Our Coaches &amp; Story
+        </button>
+        <button onclick="switchPage('shop')" data-nav="shop" class="nav-btn px-4 py-2 rounded-lg text-[#324A6D] hover:text-[#0C2340] transition cursor-pointer">
+          Sluggers Shop
+        </button>
+      </nav>
+
+      <!-- Right Quick Actions: Live Field Status Pill + Shop Bag -->
+      <div class="flex items-center gap-2">
+        <button
+          onclick="switchPage('dugout')"
+          title="Check Von King Park Field Status & GameChanger Scores"
+          id="header-status-pill"
+          class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
+        >
+          <span id="header-pill-dot" class="w-2 h-2 rounded-full bg-emerald-500 live-dot"></span>
+          <span id="header-pill-text">Von King: Open</span>
+        </button>
+
+        <button
+          onclick="toggleCartModal()"
+          class="bg-[#F3F5F8] hover:bg-slate-200 border border-slate-200 text-[#0C2340] px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition cursor-pointer"
+        >
+          <span>🧢 Shop Bag</span>
+          <span id="cart-count" class="bg-[#D91B24] text-white font-bold px-1.5 py-0.2 rounded-full text-[11px]">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       PAGE 1: PROSPECTIVE PARENT LANDING PAGE (CLEAN, BRIGHT, PHOTO-DRIVEN)
+       ========================================================================= -->
+  <main id="page-home" class="page-view block">
+
+    <!-- 1A. SUNLIT HERO WITH REAL SLUGGERS PLAYERS AT HERBERT VON KING PARK -->
+    <section class="bg-gradient-to-b from-[#F3F5F8] to-white border-b border-slate-200 py-8 sm:py-14 px-4">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Copy Column -->
+        <div class="lg:col-span-6 space-y-4 text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 shadow-xs text-[#0C2340] text-xs font-bold">
+            <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/PLAYBALL_RBI_JR.png" alt="MLB Play Ball RBI" class="h-4 w-auto object-contain" />
+            <span>Official MLB Nike RBI Program • Ages 4–16</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#0C2340] leading-[1.12] m-0">
+            Community Baseball at the Heart of <span class="text-[#1559ED]">Bed-Stuy.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-[#324A6D] leading-relaxed m-0">
+            Formed in 2014 at <strong>Herbert Von King Park</strong>, the Bed-Stuy Sluggers is a volunteer-led 501(c)(3) youth organization teaching Central Brooklyn kids the game of baseball, teamwork, and confidence—from first-time Tee-Ballers to competitive travel teams.
+          </p>
+
+          <!-- Clear, High-Contrast CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+            <a
+              href="#find-division"
+              class="bg-[#D91B24] hover:bg-red-700 text-white font-bold px-6 py-3.5 rounded-xl text-sm transition no-underline shadow-md text-center"
+            >
+              Find Your Child's Division &amp; Register →
+            </a>
+            <button
+              onclick="switchPage('dugout')"
+              class="bg-white hover:bg-[#F3F5F8] text-[#0C2340] border-2 border-[#0C2340] font-bold px-5 py-3 rounded-xl text-sm transition cursor-pointer flex items-center justify-center gap-2"
+            >
+              <span class="w-2 h-2 rounded-full bg-emerald-500 live-dot"></span>
+              Active Families: Game Day Hub
+            </button>
+          </div>
+
+          <!-- Official Partner & Sponsor Trust Bar from Original Site -->
+          <div class="pt-4 border-t border-slate-200/80 flex flex-wrap items-center gap-5">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Proudly Supported By:</span>
+            <img src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/MLB_Logo-300x169.png" alt="MLB" class="h-7 w-auto object-contain" />
+            <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/PLAYBALL_RBI_JR.png" alt="Play Ball RBI" class="h-8 w-auto object-contain" />
+            <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/04/Healthfirst_728x90_1933570137724250055-300x37.png" alt="Healthfirst Sponsor" class="h-6 w-auto object-contain rounded" />
+          </div>
+        </div>
+
+        <!-- Right Photo Collage Column (Real Action Photos from bedstuysluggers.org) -->
+        <div class="lg:col-span-6">
+          <div class="grid grid-cols-12 gap-3 items-stretch">
+            <!-- Main Action Photo -->
+            <div class="col-span-7 relative rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-slate-100">
+              <img
+                src="https://www.bedstuysluggers.org/wp-content/uploads/2025/06/c9ca91bd-95c8-4a95-b6f8-f2e4a9e141ad.jpg"
+                alt="Bed-Stuy Sluggers pitcher on the mound in pinstripe jersey"
+                class="w-full h-64 sm:h-80 object-cover object-center"
+              />
+              <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0C2340]/90 via-[#0C2340]/40 to-transparent p-3 text-white">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-sky-300">Herbert Von King Park</span>
+                <div class="text-xs font-bold">Official Nike RBI Pinstripes</div>
+              </div>
+            </div>
+
+            <!-- Two Stacked Action Photos -->
+            <div class="col-span-5 flex flex-col gap-3">
+              <div class="rounded-2xl overflow-hidden shadow-md border-4 border-white bg-slate-100 flex-1">
+                <img
+                  src="https://www.bedstuysluggers.org/wp-content/uploads/2025/06/312e2054-b66c-4b60-bf25-d7991654d32c.jpg"
+                  alt="Bed-Stuy Sluggers batter making contact"
+                  class="w-full h-32 sm:h-38 object-cover"
+                />
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-md border-4 border-white bg-slate-100 flex-1">
+                <img
+                  src="https://www.bedstuysluggers.org/wp-content/uploads/2025/06/2952b7d8-5843-43c4-b9e8-314de21d3e26.jpg"
+                  alt="Bed-Stuy Sluggers teammates smiling in the grass"
+                  class="w-full h-32 sm:h-38 object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 1B. WHY FAMILIES LOVE THE SLUGGERS (PHOTO CARDS WITH REAL KIDS) -->
+    <section class="py-12 px-4 border-b border-slate-200 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#1559ED]">Developing Superior Citizens</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0C2340] m-0 mt-1">
+            Built for Every Child in Our Neighborhood
+          </h2>
+          <p class="text-xs sm:text-sm text-[#324A6D] m-0 mt-2">
+            Whether your child is picking up a bat for the very first time at age 4 or preparing for high school baseball, there is a place for them on our diamond.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Pillar 1 -->
+          <div class="rounded-2xl border border-slate-200 bg-[#F3F5F8]/60 overflow-hidden shadow-xs flex flex-col">
+            <img
+              src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/PHOTO-2024-09-15-14-29-19-1-600x600.jpg"
+              alt="Young Tee-Ball and 6U players at Herbert Von King Park"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-5 space-y-2 flex-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#1559ED]">Ages 4–16 • All Skill Levels</span>
+              <h3 class="text-base font-extrabold text-[#0C2340] m-0">Beginners &amp; Travel Teams</h3>
+              <p class="text-xs sm:text-sm text-[#324A6D] leading-relaxed m-0">
+                First-time players learn throwing, catching, and hitting in our fun Saturday Tee-Ball program, while experienced athletes compete in NYC travel leagues.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="rounded-2xl border border-slate-200 bg-[#F3F5F8]/60 overflow-hidden shadow-xs flex flex-col">
+            <img
+              src="https://www.bedstuysluggers.org/wp-content/uploads/2023/12/Bedstuysluggers_All_Stars-1024x769.jpg"
+              alt="Bed-Stuy Sluggers players in uniform in the dugout"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-5 space-y-2 flex-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#D91B24]">Full MLB Nike RBI Uniforms</span>
+              <h3 class="text-base font-extrabold text-[#0C2340] m-0">Uniform &amp; Shared Gear Included</h3>
+              <p class="text-xs sm:text-sm text-[#324A6D] leading-relaxed m-0">
+                Registration includes your child's official Bed-Stuy Sluggers jersey, cap, pants, and socks, plus shared team bats, helmets, and catcher's equipment.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="rounded-2xl border border-slate-200 bg-[#F3F5F8]/60 overflow-hidden shadow-xs flex flex-col">
+            <img
+              src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/PHOTO-2024-09-15-14-29-19-3-600x600.jpg"
+              alt="Sluggers player raking the infield dirt at Herbert Von King Park"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-5 space-y-2 flex-1">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-700">Pride in Our Park</span>
+              <h3 class="text-base font-extrabold text-[#0C2340] m-0">Character, Hustle &amp; Community</h3>
+              <p class="text-xs sm:text-sm text-[#324A6D] leading-relaxed m-0">
+                Our players learn to take care of their teammates and their neighborhood—from raking the Von King Park diamond after games to mentoring younger divisions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1C. INTERACTIVE AGE DIVISION FINDER (CLEAN LIGHT THEME) -->
+    <section id="find-division" class="py-12 px-4 bg-[#F3F5F8] border-b border-slate-200">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-6">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-[#D91B24]">2026 Season Registration</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0C2340] m-0 mt-1">
+            Find Your Child's Age Division
+          </h2>
+          <p class="text-xs sm:text-sm text-[#324A6D] m-0 mt-1">
+            Tap your child's age group below to see their coach, typical practice days, tuition, and how to ask questions before registering.
+          </p>
+        </div>
+
+        <!-- 4 Clean Age Group Selector Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-5">
+          <button onclick="selectAgeBand('6U')" data-band="6U" class="age-tab py-3 px-3 rounded-xl font-bold text-xs border-2 border-[#0C2340] bg-[#0C2340] text-white shadow-sm transition cursor-pointer text-center">
+            <div class="text-sm font-extrabold">Ages 4–6</div>
+            <div class="opacity-85">Tee-Ball &amp; 6U</div>
+          </button>
+          <button onclick="selectAgeBand('8U')" data-band="8U" class="age-tab py-3 px-3 rounded-xl font-bold text-xs border border-slate-300 bg-white text-[#0C2340] hover:border-[#0C2340] transition cursor-pointer text-center">
+            <div class="text-sm font-extrabold">Ages 7–8</div>
+            <div class="text-[#324A6D]">7U / 8U Coach Pitch</div>
+          </button>
+          <button onclick="selectAgeBand('10U')" data-band="10U" class="age-tab py-3 px-3 rounded-xl font-bold text-xs border border-slate-300 bg-white text-[#0C2340] hover:border-[#0C2340] transition cursor-pointer text-center">
+            <div class="text-sm font-extrabold">Ages 9–10</div>
+            <div class="text-[#324A6D]">9U &amp; 10U Kid Pitch</div>
+          </button>
+          <button onclick="selectAgeBand('12U')" data-band="12U" class="age-tab py-3 px-3 rounded-xl font-bold text-xs border border-slate-300 bg-white text-[#0C2340] hover:border-[#0C2340] transition cursor-pointer text-center">
+            <div class="text-sm font-extrabold">Ages 11–16</div>
+            <div class="text-[#324A6D]">11U–16U Travel</div>
+          </button>
+        </div>
+
+        <!-- Selected Division Card -->
+        <div id="program-detail-box" class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-md">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 1D. SLUGGERS IN THE NEWS & QUICK JUMP TO GAME DAY -->
+    <section class="py-12 px-4 bg-white">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="rounded-2xl border border-slate-200 bg-[#F3F5F8] p-6 space-y-3">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-[#1559ED]">Sluggers in the Community</span>
+          <h3 class="text-lg font-extrabold text-[#0C2340] m-0">
+            "A Safe, Joyful Space for Central Brooklyn Youth"
+          </h3>
+          <p class="text-xs sm:text-sm text-[#324A6D] italic leading-relaxed m-0">
+            "At face value, the Bed-Stuy Sluggers is a baseball league. But on Saturday mornings at Herbert Von King Ballpark, the collective of teams serves as a vibrant anchor for Black and Latino families across the neighborhood."
+          </p>
+          <div class="text-xs font-semibold text-[#0C2340] pt-1">
+            📍 Home Diamonds: Herbert Von King Park (Lafayette &amp; Marcy Ave)
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-[#0C2340] text-white p-6 space-y-4 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-300">Current Players &amp; Parents</span>
+            <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-dot"></span> GameChanger Live
+            </span>
+          </div>
+          <h3 class="text-lg font-extrabold m-0">
+            Looking for Today's Field Status, Game Scores, or Trading Cards?
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-200 m-0 leading-relaxed">
+            We keep all active season schedules, live GameChanger box scores, weather alerts, and "Slugger of the Week" trading cards inside the <strong>Game Day Dugout</strong>.
+          </p>
+          <div class="flex flex-wrap gap-2.5 pt-1">
+            <button onclick="switchPage('dugout')" class="bg-[#D91B24] hover:bg-red-600 text-white font-bold px-4 py-2.5 rounded-xl text-xs cursor-pointer transition border-0">
+              Open Game Day Hub →
+            </button>
+            <button onclick="switchPage('shop')" class="bg-white/10 hover:bg-white/20 text-white font-bold px-4 py-2.5 rounded-xl text-xs cursor-pointer transition border border-white/20">
+              Browse Sluggers Merch 👕
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       PAGE 2: ACTIVE SEASON "GAME DAY & SCORES" HUB (GAMECHANGER + CARDS)
+       ========================================================================= -->
+  <main id="page-dugout" class="page-view hidden">
+
+    <!-- 2A. LIVE VON KING PARK FIELD STATUS BANNER (WITH COACH DEMO SWITCHER) -->
+    <section id="field-banner" class="bg-emerald-700 text-white py-3.5 px-4 transition-colors">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-start sm:items-center gap-2.5">
+          <span id="dugout-status-dot" class="w-3 h-3 rounded-full bg-emerald-300 live-dot shrink-0 mt-1 sm:mt-0"></span>
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-100">Herbert Von King Park Field Status</div>
+            <div id="dugout-status-text" class="text-xs sm:text-sm font-extrabold">
+              FIELD #1 &amp; #2 ARE OPEN — All Saturday practices &amp; games are on schedule.
+            </div>
+          </div>
+        </div>
+
+        <!-- Coach Demo Switcher -->
+        <div class="flex items-center gap-2 self-start sm:self-auto bg-black/20 px-2.5 py-1.5 rounded-lg border border-white/20 text-xs">
+          <span class="font-semibold">Coach Demo Test:</span>
+          <select onchange="updateFieldStatus(this.value)" aria-label="Test Field Status" class="bg-white text-[#0C2340] font-bold rounded px-2 py-0.5 text-xs cursor-pointer border-0">
+            <option value="open">🟢 Fields Open</option>
+            <option value="watch">🟡 Weather Watch</option>
+            <option value="rainout">🔴 Rainout (Move Indoors)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2B. GAMECHANGER SCOREBOARD & SCHEDULE WIDGET -->
+    <section class="py-8 px-4 bg-[#F3F5F8] border-b border-slate-200">
+      <div class="max-w-6xl mx-auto space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 live-dot"></span> Synced with GameChanger
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0C2340] m-0">
+              Live Scores &amp; Weekend Schedule
+            </h1>
+            <p class="text-xs text-[#324A6D] m-0 mt-0.5">
+              Powered by the coaches' GameChanger scorebooks—parents can follow live pitch-by-pitch updates and box scores.
+            </p>
+          </div>
+
+          <!-- Division Filter -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+            <button onclick="filterGames('ALL')" data-div="ALL" class="gc-tab px-3.5 py-1.5 rounded-lg font-bold bg-[#0C2340] text-white shrink-0 cursor-pointer border-0">All Teams</button>
+            <button onclick="filterGames('6U')" data-div="6U" class="gc-tab px-3.5 py-1.5 rounded-lg font-semibold bg-white border border-slate-300 text-[#324A6D] shrink-0 cursor-pointer">6U</button>
+            <button onclick="filterGames('8U')" data-div="8U" class="gc-tab px-3.5 py-1.5 rounded-lg font-semibold bg-white border border-slate-300 text-[#324A6D] shrink-0 cursor-pointer">8U</button>
+            <button onclick="filterGames('9U')" data-div="9U" class="gc-tab px-3.5 py-1.5 rounded-lg font-semibold bg-white border border-slate-300 text-[#324A6D] shrink-0 cursor-pointer">9U</button>
+            <button onclick="filterGames('10U')" data-div="10U" class="gc-tab px-3.5 py-1.5 rounded-lg font-semibold bg-white border border-slate-300 text-[#324A6D] shrink-0 cursor-pointer">10U</button>
+            <button onclick="filterGames('11U')" data-div="11U" class="gc-tab px-3.5 py-1.5 rounded-lg font-semibold bg-white border border-slate-300 text-[#324A6D] shrink-0 cursor-pointer">11U+</button>
+          </div>
+        </div>
+
+        <!-- Scoreboard Cards Grid -->
+        <div id="gc-scoreboard-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Coach Note on GameChanger Integration -->
+        <div class="bg-white border border-slate-200 rounded-xl p-3.5 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-2xs">
+          <span class="text-[#324A6D]">
+            💡 <strong>How this works for Coaches:</strong> GameChanger provides an official <code>widgets.gc.com</code> embed snippet under your team's <strong>Tools</strong> tab on <code>web.gc.com</code>. Paste it once into WordPress and every game updates automatically.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2C. 3D "SLUGGER OF THE WEEK" TRADING CARDS (WITH REAL ACTION PHOTOS) -->
+    <section class="py-10 px-4 bg-white">
+      <div class="max-w-6xl mx-auto space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D91B24]">Weekly Player Recognition</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0C2340] m-0 mt-1">
+              "Slugger of the Week" Trading Cards
+            </h2>
+            <p class="text-xs sm:text-sm text-[#324A6D] m-0 mt-1">
+              Tap any player card below to <strong>flip it 180°</strong> and read the coach's scouting report &amp; GameChanger stats.
+            </p>
+          </div>
+          <button
+            onclick="document.getElementById('card-creator-drawer').classList.toggle('hidden')"
+            class="bg-[#1559ED] hover:bg-blue-700 text-white font-bold px-4 py-2.5 rounded-xl text-xs cursor-pointer transition self-start sm:self-auto shadow-sm border-0"
+          >
+            + Coach Demo: Create a Player Card
+          </button>
+        </div>
+
+        <!-- Collapsible Coach Card Creator -->
+        <div id="card-creator-drawer" class="hidden bg-[#F3F5F8] border-2 border-[#1559ED] rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+            <div class="font-extrabold text-sm text-[#0C2340]">⚾ Coach 30-Second Trading Card Generator</div>
+            <button onclick="document.getElementById('card-creator-drawer').classList.add('hidden')" class="text-xs text-[#324A6D] cursor-pointer bg-transparent border-0">✕ Close</button>
+          </div>
+          <form onsubmit="createCustomCard(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div>
+              <label class="block font-bold mb-1 text-[#0C2340]">Player First Name &amp; Initial</label>
+              <input type="text" id="card-player-name" value="Mateo R." required class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-[#0C2340]" />
+            </div>
+            <div>
+              <label class="block font-bold mb-1 text-[#0C2340]">Jersey # &amp; Position</label>
+              <input type="text" id="card-player-pos" value="#42 • SS / P" required class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-[#0C2340]" />
+            </div>
+            <div>
+              <label class="block font-bold mb-1 text-[#0C2340]">Division &amp; Coach</label>
+              <select id="card-division" class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-[#0C2340]">
+                <option value="9U • Coach Rashid">9U • Coach Rashid</option>
+                <option value="Tee-Ball/6U • Coach Powers">Tee-Ball/6U • Coach Powers</option>
+                <option value="7U/8U • Coach Wormsby">7U/8U • Coach Wormsby</option>
+                <option value="10U • Coach Maxwell & Mapes">10U • Coach Maxwell &amp; Mapes</option>
+                <option value="11U • Coach Tobin">11U • Coach Tobin</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold mb-1 text-[#0C2340]">GameChanger Stat Line</label>
+              <input type="text" id="card-stats" value="2-for-3, 2B, 3 RBI, 2 SB at Von King Park" required class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-[#0C2340]" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block font-bold mb-1 text-[#0C2340]">Coach's Character Shoutout (Back of Card)</label>
+              <input type="text" id="card-quote" value="First player to help pack up the equipment shed after the game and cheered on every teammate!" required class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-[#0C2340]" />
+            </div>
+            <div class="sm:col-span-2">
+              <button type="submit" class="w-full bg-[#D91B24] text-white font-bold py-2.5 rounded-xl cursor-pointer border-0">
+                ✨ Mint New Player Card Into Deck
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- 3D Flip Cards Grid -->
+        <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       PAGE 3: OUR COACHES & STORY (USING REAL COACH PORTRAITS FROM SITE)
+       ========================================================================= -->
+  <main id="page-coaches" class="page-view hidden">
+    <section class="py-10 px-4 bg-[#F3F5F8] border-b border-slate-200">
+      <div class="max-w-6xl mx-auto space-y-8">
+        
+        <!-- Story Header (Replaces the broken sourdough bread /our-story/ page) -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-7 space-y-3">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#1559ED]">Our Mission &amp; Story</span>
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-[#0C2340] m-0">
+              Mentors On and Off the Field Since 2014
+            </h1>
+            <p class="text-xs sm:text-sm text-[#324A6D] leading-relaxed m-0">
+              The mission of the <strong>Bed-Stuy Sluggers</strong> is to provide the youth of Bedford-Stuyvesant and surrounding Central Brooklyn neighborhoods an enjoyable, safe, team-oriented experience while learning the game of baseball. We set a common standard of helping our participants build character, leadership, accountability, communication skills, and a work ethic second to none.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-3 text-xs font-bold text-[#0C2340]">
+              <span class="bg-[#F3F5F8] px-3 py-1.5 rounded-lg border border-slate-200">⚾ Ages 4–16 Divisions</span>
+              <span class="bg-[#F3F5F8] px-3 py-1.5 rounded-lg border border-slate-200">🏋️ Winter Academy at 260 Jefferson Ave</span>
+              <span class="bg-[#F3F5F8] px-3 py-1.5 rounded-lg border border-slate-200">🎓 Annual Fall Awards Gala</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5">
+            <img
+              src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/PHOTO-2024-09-15-14-29-19-2-600x600.jpg"
+              alt="Bed-Stuy Sluggers players and coaches at Von King Park"
+              class="w-full h-56 sm:h-64 object-cover rounded-xl shadow-sm"
+            />
+          </div>
+        </div>
+
+        <!-- Real Coaches Grid with Official Portraits from bedstuysluggers.org -->
+        <div>
+          <div class="mb-5">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D91B24]">Say Hello to Our Coaches</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0C2340] m-0 mt-1">
+              Meet the Bed-Stuy Sluggers Coaching Staff
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Coach Powers -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs flex flex-col">
+              <div class="p-4 bg-[#0C2340] flex items-center gap-3.5 text-white">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-POWERS-300x300.png" alt="Coach Bob Powers" class="w-16 h-16 rounded-xl object-cover border-2 border-white/20 shrink-0" />
+                <div>
+                  <span class="text-[11px] font-bold uppercase text-sky-300">Tee-Ball &amp; 6U</span>
+                  <h3 class="text-base font-extrabold m-0">Coach Bob Powers</h3>
+                </div>
+              </div>
+              <p class="p-4 text-xs text-[#324A6D] leading-relaxed m-0 flex-1">
+                Brings over 20 years of experience coaching youth sports. Dedicated to skill development, encouragement, and helping every child build confidence from their very first swing.
+              </p>
+            </div>
+
+            <!-- Coach Wormsby -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs flex flex-col">
+              <div class="p-4 bg-[#0C2340] flex items-center gap-3.5 text-white">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-WORMSBY-300x300.png" alt="Coach Sidney Wormsby" class="w-16 h-16 rounded-xl object-cover border-2 border-white/20 shrink-0" />
+                <div>
+                  <span class="text-[11px] font-bold uppercase text-sky-300">7U/8U &amp; 12U</span>
+                  <h3 class="text-base font-extrabold m-0">Coach Sidney Wormsby</h3>
+                </div>
+              </div>
+              <p class="p-4 text-xs text-[#324A6D] leading-relaxed m-0 flex-1">
+                Involved with youth baseball for nearly 40 years. Former Captain of 4 Little League All-Star State Champion teams and Michigan State walk-on. Expert in hitting, infield play, and pitching.
+              </p>
+            </div>
+
+            <!-- Coach Rashid -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs flex flex-col">
+              <div class="p-4 bg-[#0C2340] flex items-center gap-3.5 text-white">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-RASHID-300x300.png" alt="Coach Adam Rashid" class="w-16 h-16 rounded-xl object-cover border-2 border-white/20 shrink-0" />
+                <div>
+                  <span class="text-[11px] font-bold uppercase text-sky-300">9U Coach</span>
+                  <h3 class="text-base font-extrabold m-0">Coach Adam Rashid</h3>
+                </div>
+              </div>
+              <p class="p-4 text-xs text-[#324A6D] leading-relaxed m-0 flex-1">
+                4+ years with the Sluggers starting when his son was in Tee-Ball. Believes players develop life skills that carry beyond the field: working hard, respecting others, and serving the community.
+              </p>
+            </div>
+
+            <!-- Coach Wilson -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs flex flex-col">
+              <div class="p-4 bg-[#0C2340] flex items-center gap-3.5 text-white">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-WISLON-300x300.png" alt="Coach Baraka Wilson" class="w-16 h-16 rounded-xl object-cover border-2 border-white/20 shrink-0" />
+                <div>
+                  <span class="text-[11px] font-bold uppercase text-sky-300">9U Coach</span>
+                  <h3 class="text-base font-extrabold m-0">Coach Baraka Wilson</h3>
+                </div>
+              </div>
+              <p class="p-4 text-xs text-[#324A6D] leading-relaxed m-0 flex-1">
+                17 years in baseball; alumnus of Brooklawn American Legion &amp; Tri-State Arsenal, 3-year starter &amp; Captain at The Peddie School, and George Washington University baseball player.
+              </p>
+            </div>
+
+            <!-- Coach Maxwell -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs flex flex-col">
+              <div class="p-4 bg-[#0C2340] flex items-center gap-3.5 text-white">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-MAXWELL-300x300.png" alt="Coach EJ Maxwell" class="w-16 h-16 rounded-xl object-cover border-2 border-white/20 shrink-0" />
+                <div>
+                  <span class="text-[11px] font-bold uppercase text-sky-300">10U Coach</span>
+                  <h3 class="text-base font-extrabold m-0">Coach EJ Maxwell</h3>
+                </div>
+              </div>
+              <p class="p-4 text-xs text-[#324A6D] leading-relaxed m-0 flex-1">
+                10+ years competitive play across Alaska, California, and Louisiana. Specializes in middle infield defense, outfield defense, baserunning, tenacity, and communication.
+              </p>
+            </div>
+
+            <!-- Coach Mapes & Coach Tobin -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-xs flex flex-col">
+              <div class="p-4 bg-[#0C2340] flex items-center gap-3.5 text-white">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-MAPES-300x300.png" alt="Coach Brendan Mapes" class="w-16 h-16 rounded-xl object-cover border-2 border-white/20 shrink-0" />
+                <div>
+                  <span class="text-[11px] font-bold uppercase text-sky-300">10U &amp; 11U Staff</span>
+                  <h3 class="text-base font-extrabold m-0">Coaches Mapes &amp; Tobin</h3>
+                </div>
+              </div>
+              <p class="p-4 text-xs text-[#324A6D] leading-relaxed m-0 flex-1">
+                <strong>Coach Brendan Mapes</strong> (10U) was an All-Region catcher at Oberlin College. <strong>Coach Jacob Tobin</strong> (11U) is an Assistant Coach at BMCC and directs the Hamptons Collegiate League analytics program.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       PAGE 4: SLUGGERS CLUBHOUSE SHOP (REAL WOOCOMMERCE PRODUCT PHOTOS!)
+       ========================================================================= -->
+  <main id="page-shop" class="page-view hidden">
+    <section class="py-10 px-4 bg-[#F3F5F8] min-h-[75vh]">
+      <div class="max-w-6xl mx-auto space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-widest text-[#D91B24]">Official League Merch Store</span>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-[#0C2340] m-0 mt-1">
+              The Sluggers Clubhouse Shop
+            </h1>
+            <p class="text-xs sm:text-sm text-[#324A6D] m-0 mt-1">
+              Featuring the real products from <code>bedstuysluggers.org/shop/</code>—now with clean titles, organized categories, and a scholarship round-up at checkout.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs shrink-0">
+            <button onclick="filterMerch('all')" data-cat="all" class="merch-tab px-3.5 py-2 rounded-xl font-bold bg-[#0C2340] text-white cursor-pointer border-0">All Merch</button>
+            <button onclick="filterMerch('family')" data-cat="family" class="merch-tab px-3.5 py-2 rounded-xl font-semibold bg-[#F3F5F8] text-[#324A6D] hover:text-[#0C2340] cursor-pointer border border-slate-200">Mom, Dad, Aunty &amp; Uncle</button>
+            <button onclick="filterMerch('streetwear')" data-cat="streetwear" class="merch-tab px-3.5 py-2 rounded-xl font-semibold bg-[#F3F5F8] text-[#324A6D] hover:text-[#0C2340] cursor-pointer border border-slate-200">Tees &amp; Youth</button>
+            <button onclick="filterMerch('equipment')" data-cat="equipment" class="merch-tab px-3.5 py-2 rounded-xl font-semibold bg-[#F3F5F8] text-[#324A6D] hover:text-[#0C2340] cursor-pointer border border-slate-200">Mugs &amp; Gear</button>
+          </div>
+        </div>
+
+        <!-- Real WooCommerce Product Grid -->
+        <div id="merch-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER (CLASSIC NAVY BAND LIKE ORIGINAL SITE)
+       ========================================================= -->
+  <footer class="bg-[#0C2340] text-white py-10 px-4 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img
+          src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/Bedstuysluggers_logo-300x175.png"
+          alt="Bed-Stuy Sluggers"
+          class="h-12 w-auto bg-white p-1.5 rounded-xl"
+        />
+        <div>
+          <div class="font-extrabold text-sm">Bed-Stuy Sluggers Baseball League Inc.</div>
+          <div class="text-slate-300 mt-0.5">670 Lafayette Avenue, Brooklyn, NY 11216 • Herbert Von King Park</div>
+          <div class="text-slate-400 mt-0.5">Phone: (646) 494-5600 • Email: admin@bedstuysluggers.org • 501(c)(3) EIN 46-5241276</div>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <a href="https://www.instagram.com/bedstuysluggers/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-white/20 text-white px-3.5 py-2 rounded-lg font-bold no-underline">Instagram</a>
+        <a href="https://www.facebook.com/bedstuysluggers/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-white/20 text-white px-3.5 py-2 rounded-lg font-bold no-underline">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       MOBILE BOTTOM NAVIGATION BAR (CLEAN WHITE & NAVY)
+       ========================================================= -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-slate-200 shadow-lg px-2 py-1.5 grid grid-cols-4 gap-1 text-xs">
+    <button onclick="switchPage('home')" data-mnav="home" class="mnav-btn flex flex-col items-center justify-center py-1 rounded-lg text-[#0C2340] font-extrabold bg-[#F3F5F8] cursor-pointer border-0">
+      <span>🏠</span>
+      <span class="mt-0.5 text-[11px]">Welcome</span>
+    </button>
+    <button onclick="switchPage('dugout')" data-mnav="dugout" class="mnav-btn flex flex-col items-center justify-center py-1 rounded-lg text-[#324A6D] font-semibold bg-transparent cursor-pointer border-0 relative">
+      <span>⚾</span>
+      <span class="mt-0.5 text-[11px]">Game Day</span>
+      <span class="w-2 h-2 rounded-full bg-emerald-500 live-dot absolute top-1 right-5"></span>
+    </button>
+    <button onclick="switchPage('coaches')" data-mnav="coaches" class="mnav-btn flex flex-col items-center justify-center py-1 rounded-lg text-[#324A6D] font-semibold bg-transparent cursor-pointer border-0">
+      <span>🧢</span>
+      <span class="mt-0.5 text-[11px]">Coaches</span>
+    </button>
+    <button onclick="switchPage('shop')" data-mnav="shop" class="mnav-btn flex flex-col items-center justify-center py-1 rounded-lg text-[#324A6D] font-semibold bg-transparent cursor-pointer border-0">
+      <span>👕</span>
+      <span class="mt-0.5 text-[11px]">Shop</span>
+    </button>
+  </nav>
+
+  <!-- =========================================================
+       SHOPPING BAG MODAL
+       ========================================================= -->
+  <div id="cart-modal" class="hidden fixed inset-0 z-50 bg-[#0C2340]/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white border border-slate-200 rounded-2xl max-w-md w-full p-5 space-y-4 shadow-2xl text-[#0C2340]">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <h3 class="text-base font-extrabold m-0">🧢 Your Sluggers Clubhouse Bag</h3>
+        <button onclick="toggleCartModal()" class="text-xs text-[#324A6D] hover:text-[#0C2340] cursor-pointer bg-transparent border-0 font-bold">✕ Close</button>
+      </div>
+      <div id="cart-items-list" class="space-y-2 text-xs max-h-60 overflow-y-auto"></div>
+      <div class="p-3.5 rounded-xl bg-blue-50 border border-blue-200 text-xs space-y-1">
+        <label class="flex items-center justify-between cursor-pointer">
+          <span class="font-bold text-[#1559ED]">⚾ Add $10 Player Scholarship Donation?</span>
+          <input type="checkbox" id="scholarship-toggle" checked onchange="renderCart()" class="accent-[#1559ED] w-4 h-4" />
+        </label>
+        <p class="text-[11px] text-[#324A6D] m-0">100% tax-deductible 501(c)(3) gift toward registration scholarships and Von King Park equipment.</p>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-slate-200 text-sm font-extrabold">
+        <span>Total</span>
+        <span id="cart-total" class="text-[#D91B24] text-base">$35.00</span>
+      </div>
+      <button onclick="alert('Proceeds directly to WooCommerce Checkout!')" class="w-full bg-[#D91B24] hover:bg-red-700 text-white font-bold py-3 rounded-xl text-xs cursor-pointer border-0 shadow-sm">
+        Proceed to Checkout →
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INTERACTIVE JAVASCRIPT
+       ========================================================= -->
+  <script>
+    // 1. MULTI-PAGE TAB SWITCHING
+    function switchPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('block');
+      });
+      const target = document.getElementById(`page-${pageId}`);
+      if (target) {
+        target.classList.remove('hidden');
+        target.classList.add('block');
+      }
+
+      // Desktop Nav Highlight
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.dataset.nav === pageId) {
+          btn.className = 'nav-btn px-4 py-2 rounded-lg bg-[#0C2340] text-white shadow-sm transition cursor-pointer flex items-center gap-1.5';
+        } else {
+          btn.className = 'nav-btn px-4 py-2 rounded-lg text-[#324A6D] hover:text-[#0C2340] transition cursor-pointer flex items-center gap-1.5';
+        }
+      });
+
+      // Mobile Bottom Bar Highlight
+      document.querySelectorAll('.mnav-btn').forEach(btn => {
+        if (btn.dataset.mnav === pageId) {
+          btn.className = 'mnav-btn flex flex-col items-center justify-center py-1 rounded-lg text-[#0C2340] font-extrabold bg-[#F3F5F8] cursor-pointer border-0 relative';
+        } else {
+          btn.className = 'mnav-btn flex flex-col items-center justify-center py-1 rounded-lg text-[#324A6D] font-semibold bg-transparent cursor-pointer border-0 relative';
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 2. AGE DIVISION FINDER (WITH REAL COACH PHOTOS FROM SITE)
+    const agePrograms = {
+      '6U': {
+        badge: 'Ages 4–6 • Introductory Division',
+        title: 'Tee-Ball & 6U Fundamentals',
+        coach: 'Coach Bob Powers (20+ yrs youth coaching)',
+        coachImg: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-POWERS-150x150.png',
+        schedule: 'Saturdays 9:30 AM – 11:00 AM at Herbert Von King Park',
+        dues: '$450 Spring/Summer (Financial Aid Available)',
+        desc: 'Whether it is your child’s first time picking up a bat or they have already taken a few swings, Coach Bob focuses on skill development, base-running, and making every Saturday morning fun.',
+        included: 'Includes official Bed-Stuy Sluggers Nike RBI jersey, cap, socks, and shared team bats & helmets.'
+      },
+      '8U': {
+        badge: 'Ages 7–8 • Developmental Division',
+        title: '7U / 8U Coach-Pitch & Kid-Pitch Prep',
+        coach: 'Coach Sidney Wormsby (40 yrs baseball experience)',
+        coachImg: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-WORMSBY-150x150.png',
+        schedule: '1 Weekday Practice (5:30 PM) + Saturday Games at Von King Park',
+        dues: '$650 Spring/Summer Season',
+        desc: 'Led by 40-year veteran Coach Sidney Wormsby, players build strong hitting mechanics, infield footwork, and transition smoothly from coach-pitch to live pitching.',
+        included: 'Includes full uniform kit, league insurance, and all shared team batting & catching equipment.'
+      },
+      '10U': {
+        badge: 'Ages 9–10 • Full Kid-Pitch Baseball',
+        title: '9U & 10U Bed-Stuy Sluggers RBI',
+        coach: 'Coaches Adam Rashid, Baraka Wilson, EJ Maxwell & Brendan Mapes',
+        coachImg: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-RASHID-150x150.png',
+        schedule: '2x Weekly Practices + Weekend Games at Von King Park & NYC Fields',
+        dues: '$775–$825 Spring/Summer Season',
+        desc: 'Full kid-pitch baseball teaching outfield defense, middle-infield communication, catching mechanics, base stealing, and life skills that carry beyond the diamond.',
+        included: 'Includes full uniform kit, live GameChanger scoring for families, and optional Winter Academy conditioning.'
+      },
+      '12U': {
+        badge: 'Ages 11–16 • Senior & Travel Divisions',
+        title: '11U, 12U, 14U & 16U Competitive RBI',
+        coach: 'Coach Jacob Tobin (BMCC) & Coach Sidney Wormsby',
+        coachImg: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/03/COACH-WORMSBY-150x150.png',
+        schedule: '2x Weekly Practices + Weekend Doubleheaders & Tournaments',
+        dues: '$825 Spring/Summer Season',
+        desc: 'High-level training and competition preparing Central Brooklyn athletes for middle school, high school varsity, and regional travel tournaments.',
+        included: 'Includes full uniform kit, tournament entry, and access to 260 Jefferson Ave indoor winter training.'
+      }
+    };
+
+    function selectAgeBand(band) {
+      document.querySelectorAll('.age-tab').forEach(btn => {
+        if (btn.dataset.band === band) {
+          btn.className = 'age-tab py-3 px-3 rounded-xl font-bold text-xs border-2 border-[#0C2340] bg-[#0C2340] text-white shadow-sm transition cursor-pointer text-center';
+        } else {
+          btn.className = 'age-tab py-3 px-3 rounded-xl font-bold text-xs border border-slate-300 bg-white text-[#0C2340] hover:border-[#0C2340] transition cursor-pointer text-center';
+        }
+      });
+
+      const p = agePrograms[band];
+      document.getElementById('program-detail-box').innerHTML = `
+        <div class="space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+            <div>
+              <span class="text-xs font-extrabold uppercase text-[#1559ED]">${p.badge}</span>
+              <h3 class="text-lg sm:text-xl font-extrabold text-[#0C2340] m-0 mt-0.5">${p.title}</h3>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">Registration Open</span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-[#324A6D] leading-relaxed m-0">${p.desc}</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-[#F3F5F8] border border-slate-200 flex items-center gap-3">
+              <img src="${p.coachImg}" alt="${p.coach}" class="w-12 h-12 rounded-lg object-cover shrink-0" />
+              <div>
+                <div class="text-slate-500 font-semibold">Division Coaching Staff</div>
+                <div class="font-bold text-[#0C2340] mt-0.5">${p.coach}</div>
+              </div>
+            </div>
+            <div class="p-3 rounded-xl bg-[#F3F5F8] border border-slate-200 flex flex-col justify-center">
+              <div class="text-slate-500 font-semibold">Practice &amp; Game Schedule</div>
+              <div class="font-bold text-[#0C2340] mt-0.5">📍 ${p.schedule}</div>
+            </div>
+          </div>
+
+          <div class="p-3 rounded-xl bg-blue-50 border border-blue-200 text-xs text-[#0C2340]">
+            <strong>✓ Uniform &amp; Equipment Included:</strong> ${p.included}
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-slate-200">
+            <div class="text-xs">
+              <span class="text-[#324A6D]">Season Tuition:</span>
+              <span class="font-extrabold text-[#0C2340] ml-1">${p.dues}</span>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+              <button onclick="alert('Opens a direct message form to the coach so prospective parents can get all their questions answered before paying on LeagueApps!')" class="bg-[#F3F5F8] hover:bg-slate-200 border border-slate-300 text-[#0C2340] font-bold px-4 py-2.5 rounded-xl text-xs cursor-pointer transition">
+                💬 Ask Coach a Question First
+              </button>
+              <a href="https://bedstuysluggersrbi.leagueapps.com/" target="_blank" rel="noopener" class="bg-[#D91B24] hover:bg-red-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs no-underline text-center transition shadow-xs">
+                Register on LeagueApps ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // 3. FIELD STATUS UPDATER
+    function updateFieldStatus(status) {
+      const banner = document.getElementById('field-banner');
+      const dot = document.getElementById('dugout-status-dot');
+      const text = document.getElementById('dugout-status-text');
+      const pill = document.getElementById('header-status-pill');
+      const pillDot = document.getElementById('header-pill-dot');
+      const pillText = document.getElementById('header-pill-text');
+
+      if (status === 'open') {
+        banner.className = 'bg-emerald-700 text-white py-3.5 px-4 transition-colors';
+        dot.className = 'w-3 h-3 rounded-full bg-emerald-300 live-dot shrink-0 mt-1 sm:mt-0';
+        text.textContent = 'FIELD #1 & #2 ARE OPEN — All Saturday practices & games are on schedule.';
+        pill.className = 'bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition cursor-pointer';
+        pillDot.className = 'w-2 h-2 rounded-full bg-emerald-500 live-dot';
+        pillText.textContent = 'Von King: Open';
+      } else if (status === 'watch') {
+        banner.className = 'bg-amber-600 text-white py-3.5 px-4 transition-colors';
+        dot.className = 'w-3 h-3 rounded-full bg-amber-200 live-dot shrink-0 mt-1 sm:mt-0';
+        text.textContent = 'WEATHER WATCH — Light rain at Von King Park; coaches will post final call by 8:00 AM.';
+        pill.className = 'bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition cursor-pointer';
+        pillDot.className = 'w-2 h-2 rounded-full bg-amber-500 live-dot';
+        pillText.textContent = 'Weather Watch';
+      } else {
+        banner.className = 'bg-[#D91B24] text-white py-3.5 px-4 transition-colors';
+        dot.className = 'w-3 h-3 rounded-full bg-red-200 live-dot shrink-0 mt-1 sm:mt-0';
+        text.textContent = 'RAINOUT ALERT — Outdoor fields closed. 9U–12U moved indoors to 260 Jefferson Ave.';
+        pill.className = 'bg-red-50 hover:bg-red-100 border border-red-300 text-red-800 px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition cursor-pointer';
+        pillDot.className = 'w-2 h-2 rounded-full bg-red-600 live-dot';
+        pillText.textContent = 'Rainout Alert';
+      }
+    }
+
+    // 4. GAMECHANGER SCOREBOARD DATA
+    const gamesData = [
+      {
+        div: '9U',
+        status: 'LIVE • TOP 5TH',
+        isLive: true,
+        away: 'Prospect Park (PPYBA)',
+        awayScore: 4,
+        home: 'Sluggers 9U (Rashid)',
+        homeScore: 6,
+        location: 'Von King • Field 1',
+        gcNote: '2 Out • Runners on 1st & 2nd'
+      },
+      {
+        div: '10U',
+        status: 'FINAL • SAT',
+        isLive: false,
+        away: 'Brooklyn Bulldogs 10U',
+        awayScore: 3,
+        home: 'Sluggers 10U (Maxwell/Mapes)',
+        homeScore: 8,
+        location: 'Von King • Field 2',
+        gcNote: 'WP: J. Morales (4 IP, 6 K)'
+      },
+      {
+        div: '8U',
+        status: 'FINAL • SAT',
+        isLive: false,
+        away: 'SFX Youth Sports 8U',
+        awayScore: 5,
+        home: 'Sluggers 8U (Wormsby)',
+        homeScore: 7,
+        location: 'Von King • Field 1',
+        gcNote: 'Team Hit: 11 Hits, 0 Errors'
+      },
+      {
+        div: '11U',
+        status: 'SUN • 10:00 AM',
+        isLive: false,
+        away: 'Sluggers 11U (Tobin)',
+        awayScore: '—',
+        home: 'North Brooklyn (NBYBL)',
+        homeScore: '—',
+        location: 'McCarren Park • #2',
+        gcNote: 'Probable: K. Brooks (#14)'
+      },
+      {
+        div: '6U',
+        status: 'SAT • 9:30 AM',
+        isLive: false,
+        away: 'Sluggers Tee-Ball Gold',
+        awayScore: '—',
+        home: 'Sluggers 6U (Powers)',
+        homeScore: '—',
+        location: 'Von King • Mini Diamond',
+        gcNote: 'Scrimmage & Stations'
+      }
+    ];
+
+    function filterGames(div) {
+      document.querySelectorAll('.gc-tab').forEach(btn => {
+        if (btn.dataset.div === div) {
+          btn.className = 'gc-tab px-3.5 py-1.5 rounded-lg font-bold bg-[#0C2340] text-white shrink-0 cursor-pointer border-0';
+        } else {
+          btn.className = 'gc-tab px-3.5 py-1.5 rounded-lg font-semibold bg-white border border-slate-300 text-[#324A6D] shrink-0 cursor-pointer';
+        }
+      });
+
+      const list = div === 'ALL' ? gamesData.slice(0, 3) : gamesData.filter(g => g.div === div);
+      document.getElementById('gc-scoreboard-grid').innerHTML = list.map(g => `
+        <div class="p-4 rounded-2xl bg-white border-2 ${g.isLive ? 'border-emerald-500' : 'border-slate-200'} text-xs flex flex-col justify-between gap-2.5 shadow-xs">
+          <div class="flex items-center justify-between">
+            <span class="font-extrabold px-2.5 py-0.5 rounded-full ${g.isLive ? 'bg-emerald-100 text-emerald-800' : 'bg-[#F3F5F8] text-[#0C2340]'}">
+              ${g.div} • ${g.status}
+            </span>
+            <span class="text-[#324A6D] font-medium">${g.location}</span>
+          </div>
+          <div class="space-y-1.5 my-1 text-sm">
+            <div class="flex items-center justify-between text-[#324A6D]">
+              <span class="truncate pr-2">${g.away}</span>
+              <span class="font-mono font-bold text-[#0C2340]">${g.awayScore}</span>
+            </div>
+            <div class="flex items-center justify-between font-extrabold text-[#0C2340]">
+              <span class="truncate pr-2">${g.home}</span>
+              <span class="font-mono text-[#D91B24] text-base">${g.homeScore}</span>
+            </div>
+          </div>
+          <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs text-[#324A6D]">
+            <span class="truncate">${g.gcNote}</span>
+            <span class="text-[#1559ED] font-bold shrink-0 ml-2">Box Score ↗</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 5. 3D TRADING CARDS USING REAL BED-STUY SLUGGERS ACTION PHOTOS
+    const sluggerCards = [
+      {
+        name: 'Aracena (#26)',
+        pos: 'RHP / INF',
+        division: 'Sluggers RBI • Von King',
+        badge: '🔥 Command on the Mound',
+        photo: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/06/c9ca91bd-95c8-4a95-b6f8-f2e4a9e141ad.jpg',
+        stats: '4.0 IP, 7 K, 0 BB • 2-for-3 at the Plate',
+        quote: 'Pounded the strike zone all morning at Herbert Von King Park and was the first player out of the dugout to high-five our defense every inning.'
+      },
+      {
+        name: 'Berlow (#22)',
+        pos: 'OF / 2B',
+        division: 'Sluggers RBI • Von King',
+        badge: '🧤 Gold Glove Defense',
+        photo: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/06/36c82d36-09e0-4b4b-8f80-87182c730248.jpg',
+        stats: '2 Running Catches in CF + 2 Stolen Bases',
+        quote: 'Tracked down everything hit to the outfield grass and kept our entire defense communicating on every pitch.'
+      },
+      {
+        name: 'Slugger #99',
+        pos: 'P / SS',
+        division: 'Sluggers RBI • Von King',
+        badge: '⚡ Clutch Competitor',
+        photo: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/06/c5e38369-e3f8-49c9-8bff-6b1d237e998e.jpg',
+        stats: 'Complete Game Effort + Go-Ahead Double',
+        quote: 'Brought relentless energy in the Bed-Stuy pinstripes and stayed after the game to help younger players with their throwing mechanics.'
+      }
+    ];
+
+    function renderTradingCards() {
+      document.getElementById('cards-container').innerHTML = sluggerCards.map(c => `
+        <div class="perspective-1000 h-[390px] cursor-pointer select-none" onclick="this.querySelector('.card-inner').classList.toggle('flipped')">
+          <div class="card-inner transform-style-3d relative w-full h-full">
+            
+            <!-- FRONT OF BASEBALL CARD (CLASSIC TOPPS-STYLE WHITE/NAVY/RED BORDER) -->
+            <div class="backface-hidden absolute inset-0 rounded-2xl bg-white border-4 border-[#0C2340] p-3 flex flex-col justify-between shadow-lg">
+              <div class="flex items-center justify-between text-xs pb-2">
+                <span class="font-extrabold px-2.5 py-0.5 rounded bg-[#0C2340] text-white">${c.division}</span>
+                <span class="text-[#1559ED] font-bold">🔄 Tap to Flip</span>
+              </div>
+
+              <!-- Real Action Photo Frame -->
+              <div class="relative rounded-xl overflow-hidden border-2 border-slate-200 flex-1 bg-slate-100">
+                <img src="${c.photo}" alt="${c.name}" class="w-full h-48 object-cover object-top" />
+                <div class="absolute top-2 left-2 px-2.5 py-0.5 rounded-full bg-white/95 text-[#0C2340] text-[11px] font-extrabold shadow-xs">
+                  ${c.badge}
+                </div>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0C2340] via-[#0C2340]/85 to-transparent p-3 text-white">
+                  <div class="text-base font-extrabold leading-tight">${c.name}</div>
+                  <div class="text-xs font-bold text-sky-300">${c.pos}</div>
+                </div>
+              </div>
+
+              <!-- Stat Strip -->
+              <div class="pt-2.5 text-xs">
+                <div class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">GameChanger Verified Stat Line</div>
+                <div class="font-mono font-bold text-[#0C2340] truncate mt-0.5">${c.stats}</div>
+              </div>
+            </div>
+
+            <!-- BACK OF BASEBALL CARD -->
+            <div class="backface-hidden rotate-y-180 absolute inset-0 rounded-2xl bg-[#F3F5F8] border-4 border-[#1559ED] p-4 flex flex-col justify-between shadow-lg text-xs">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between border-b border-slate-300 pb-2">
+                  <span class="font-extrabold text-sm text-[#0C2340]">${c.name} • ${c.pos}</span>
+                  <span class="px-2 py-0.5 rounded bg-[#0C2340] text-white font-bold">SCOUTING REPORT</span>
+                </div>
+                <div>
+                  <div class="text-[10px] font-bold uppercase text-[#D91B24] mb-1">Coach's Corner Note</div>
+                  <p class="italic leading-relaxed text-[#0C2340] m-0 bg-white p-3 rounded-xl border border-slate-200">
+                    "${c.quote}"
+                  </p>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-slate-200">
+                  <div class="font-bold text-[#1559ED]">GameChanger Highlights</div>
+                  <div class="font-mono font-bold text-[#0C2340] mt-0.5">${c.stats}</div>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-slate-300 flex items-center justify-between">
+                <img src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/Bedstuysluggers_logo-300x175.png" alt="Logo" class="h-6 w-auto" />
+                <button type="button" onclick="event.stopPropagation(); alert('Downloads this baseball card image so parents can share on Instagram or WhatsApp!')" class="text-[#D91B24] font-extrabold hover:underline cursor-pointer bg-transparent border-0 p-0">
+                  📲 Share Card
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function createCustomCard(e) {
+      e.preventDefault();
+      sluggerCards.unshift({
+        name: document.getElementById('card-player-name').value,
+        pos: document.getElementById('card-player-pos').value,
+        division: document.getElementById('card-division').value,
+        badge: '⭐ Slugger of the Week',
+        photo: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/06/312e2054-b66c-4b60-bf25-d7991654d32c.jpg',
+        stats: document.getElementById('card-stats').value,
+        quote: document.getElementById('card-quote').value
+      });
+      if (sluggerCards.length > 3) sluggerCards.pop();
+      renderTradingCards();
+      document.getElementById('card-creator-drawer').classList.add('hidden');
+    }
+
+    // 6. MERCH STORE USING REAL PRODUCT PHOTOS FROM BEDSTUYSLUGGERS.ORG/SHOP/
+    const merchProducts = [
+      {
+        id: 'hitters-tee',
+        name: '"I Only Raise Hitters" Unisex Jersey Tee',
+        price: 25,
+        category: 'family',
+        badge: 'Parent Favorite',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2024/06/18102-58-300x300.jpg'
+      },
+      {
+        id: 'baseball-mom-crew',
+        name: 'Bed-Stuy Sluggers "Baseball Mom" Crewneck Sweatshirt',
+        price: 37,
+        category: 'family',
+        badge: 'Cozy Fleece',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2024/06/25456-300x300.jpg'
+      },
+      {
+        id: 'baseball-dad-tee',
+        name: 'Bed-Stuy Sluggers "Baseball Dad" Short Sleeve Tee',
+        price: 25,
+        category: 'family',
+        badge: 'Sideline Classic',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2024/06/18086-58-300x300.jpg'
+      },
+      {
+        id: 'aunty-tee',
+        name: 'Bed-Stuy Sluggers "Baseball Aunty & Uncle" Tee',
+        price: 25,
+        category: 'family',
+        badge: 'Family Pride',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2024/06/18086-116-300x300.jpg'
+      },
+      {
+        id: 'classic-grey-tee',
+        name: 'Bed-Stuy Sluggers Classic Grey Logo Tee',
+        price: 25,
+        category: 'streetwear',
+        badge: 'Official Logo',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2023/12/Bedstuy_sluggers_T_Shirt_Grey_Main-300x300.jpeg'
+      },
+      {
+        id: 'icons-tee',
+        name: 'Bed-Stuy Sluggers "Icons" Unisex Tee',
+        price: 30,
+        category: 'streetwear',
+        badge: 'Brooklyn Edition',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2024/06/18094-300x300.jpg'
+      },
+      {
+        id: 'ceramic-mug',
+        name: 'Bed-Stuy Sluggers 11oz Ceramic Coffee Mug',
+        price: 15,
+        category: 'equipment',
+        badge: 'Morning Games',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2024/06/65216-300x300.jpg'
+      },
+      {
+        id: 'kids-sunglasses',
+        name: 'Youth Baseball Sunglasses (3-Pack • Ages 6–14)',
+        price: 18,
+        category: 'equipment',
+        badge: 'Equipment List',
+        img: 'https://www.bedstuysluggers.org/wp-content/uploads/2025/04/3PACK-Kids-Sunglasses-for-6-14-Boys-Girls-300x300.jpg'
+      }
+    ];
+
+    let cart = [{ ...merchProducts[0], qty: 1 }];
+
+    function filterMerch(cat) {
+      document.querySelectorAll('.merch-tab').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.className = 'merch-tab px-3.5 py-2 rounded-xl font-bold bg-[#0C2340] text-white cursor-pointer border-0';
+        } else {
+          btn.className = 'merch-tab px-3.5 py-2 rounded-xl font-semibold bg-[#F3F5F8] text-[#324A6D] hover:text-[#0C2340] cursor-pointer border border-slate-200';
+        }
+      });
+
+      const list = cat === 'all' ? merchProducts : merchProducts.filter(p => p.category === cat);
+      document.getElementById('merch-grid').innerHTML = list.map(p => `
+        <div class="bg-white border border-slate-200 rounded-2xl p-4 flex flex-col justify-between gap-3 shadow-xs hover:shadow-md transition">
+          <div>
+            <div class="h-44 rounded-xl bg-[#F3F5F8] overflow-hidden relative mb-3 flex items-center justify-center">
+              <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain p-2" />
+              <span class="absolute top-2 left-2 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#0C2340] text-white">${p.badge}</span>
+            </div>
+            <div class="font-bold text-sm text-[#0C2340] leading-snug">${p.name}</div>
+          </div>
+          <div class="pt-2.5 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-sm font-extrabold text-[#D91B24]">$${p.price}.00</span>
+            <button onclick="addToCart('${p.id}')" class="bg-[#0C2340] hover:bg-[#1559ED] text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition cursor-pointer border-0">
+              + Add to Bag
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function addToCart(id) {
+      const item = merchProducts.find(p => p.id === id);
+      const existing = cart.find(c => c.id === id);
+      if (existing) existing.qty += 1;
+      else cart.push({ ...item, qty: 1 });
+      renderCart();
+      toggleCartModal(true);
+    }
+
+    function renderCart() {
+      const countEl = document.getElementById('cart-count');
+      const listEl = document.getElementById('cart-items-list');
+      const totalEl = document.getElementById('cart-total');
+      const scholarship = document.getElementById('scholarship-toggle').checked ? 10 : 0;
+
+      countEl.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
+      listEl.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between p-2.5 rounded-xl bg-[#F3F5F8] border border-slate-200">
+          <div class="flex items-center gap-2.5">
+            <img src="${item.img}" alt="${item.name}" class="w-10 h-10 rounded object-cover bg-white" />
+            <div>
+              <div class="font-bold text-[#0C2340]">${item.name}</div>
+              <div class="text-[#324A6D]">Qty: ${item.qty} × $${item.price}.00</div>
+            </div>
+          </div>
+          <span class="font-mono font-bold text-[#0C2340]">$${item.qty * item.price}.00</span>
+        </div>
+      `).join('');
+
+      const subtotal = cart.reduce((sum, i) => sum + i.qty * i.price, 0) + scholarship;
+      totalEl.textContent = `$${subtotal}.00`;
+    }
+
+    function toggleCartModal(forceOpen) {
+      const m = document.getElementById('cart-modal');
+      if (forceOpen === true) m.classList.remove('hidden');
+      else m.classList.toggle('hidden');
+    }
+
+    // Initialize all views
+    selectAgeBand('6U');
+    filterGames('ALL');
+    renderTradingCards();
+    filterMerch('all');
+    renderCart();
+  </script>
+</body>
+</html>
