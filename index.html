@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Bed-Stuy Sluggers Baseball League Inc. | Central Brooklyn Youth Baseball</title>
+  <meta name="description" content="Official 501(c)(3) youth development and MLB Nike RBI baseball organization serving Bedford-Stuyvesant and Central Brooklyn at Herbert Von King Park." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bss-navy: #0C2340;
+      --bss-navy-mid: #1C244B;
+      --bss-royal: #1559ED;
+      --bss-red: #D91B24;
+      --bss-bg-soft: #F3F5F8;
+      --bss-text-body: #324A6D;
+    }
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FFFFFF;
+      color: #0C2340;
+    }
+    /* 3D Trading Card Flip Utilities */
+    .perspective-1000 { perspective: 1000px; }
+    .transform-style-3d {
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .backface-hidden {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .rotate-y-180 { transform: rotateY(180deg); }
+    .flipped { transform: rotateY(180deg); }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.25); }
+    }
+    .live-dot { animation: pulse-dot 1.8s infinite ease-in-out; }
+  </style>
+</head>
+<body class="bg-white text-[#0C2340] antialiased m-0 p-0 pb-20 md:pb-0">
+  <!-- =========================================================
+       STICKY HEADER (CRISP WHITE, ORIGINAL SLUGGERS LOGO & NAVY/RED)
+       ========================================================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-3">
+      <!-- Real Bed-Stuy Sluggers Logo -->
+      <button onclick="switchPage('home')" class="flex items-center gap-3 text-left bg-transparent border-0 p-0 cursor-pointer">
+        <img
+          src="https://www.bedstuysluggers.org/wp-content/uploads/2024/10/Bedstuysluggers_logo-300x175.png"
+          alt="Bed-Stuy Sluggers Logo"
+          class="h-11 sm:h-14 w-auto object-contain"
+        />
+        <div class="hidden sm:block border-l border-slate-200 pl-3">
+          <div class="font-extrabold tracking-tight text-sm text-[#0C2340] leading-tight">BED-STUY SLUGGERS</div>
+          <div class="text-[11px] font-medium text-[#324A6D]">Central Brooklyn • Est. 2014</div>
+        </div>
+      </button>
